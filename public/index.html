@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Nima Bot Controller</title>
+</head>
+<body style="text-align: center; margin-top: 100px;">
+  <h1>Nima WhatsApp Bot Control</h1>
+  <button onclick="controlBot('/start')">Start Bot</button>
+  <button onclick="controlBot('/stop')">Stop Bot</button>
+  <button onclick="controlBot('/restart')">Restart Bot</button>
+
+  <p id="result" style="margin-top: 20px;"></p>
+
+  <script>
+    function controlBot(action) {
+      fetch(action)
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('result').innerText = data;
+        })
+        .catch(error => {
+          document.getElementById('result').innerText = 'Error: ' + error;
+        });
+    }
+  </script>
+</body>
+</html>
