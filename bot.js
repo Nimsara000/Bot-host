@@ -1,0 +1,1 @@
+console.log("Nima Bot Started! Replace this with your real bot.js file.");
